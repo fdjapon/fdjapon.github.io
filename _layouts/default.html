@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0">
+    <meta charset="utf-8">
+    <title>{{ page.title }}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    {% if page.noindex == "1" %}
+    <meta name="robots" content="noindex">
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1><span id="name">FD</span><br/>JAPON</h1></a>
+    </header>
+    <span><span></span></span>
+    <div class="wrap">
+  	<a href="#"><div></div></a>
+  	<a href="#"><div></div></a>
+  	<a href="#"><div></div></a>
+  	<a href="#"><div></div></a>
+  	<a href="#"><div></div></a>
+    </div>
+    <div id="content">
+      {{ content}}
+    </div>
+    <footer>
+      <div>Contact : fd_test01@avrt.fr</div>
+      <div>© FD</div>
+    </footer>
+  </div>
+  </body>
+</html>
