@@ -60,12 +60,12 @@ header {
 
 nav {
   display: flex;
-  min-height: 60%; /* Safari Fix... */
+  min-height: 200px; /* Safari Fix... */
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
   #logo {
-    width: 60%;
+    width: 200px;
   }
   ul {
     display: flex;
