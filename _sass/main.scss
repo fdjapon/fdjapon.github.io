@@ -20,7 +20,7 @@ h2 {
 }
 
 #name {
-  font-size: 1em;
+  font-size: 0.85em;
   letter-spacing: 0.7em;
   font-family: Cormorant, sans-serif;
   font-weight: 400;
@@ -76,13 +76,13 @@ nav {
       text-decoration: none;
       color: black;
       letter-spacing: 0.1em;
-      font-size: 0.8em;
+      font-size: 0.9em;
     }
   }
 }
 
 p {
-  padding: 45px 110px;
+  padding: 35px 100px;
 }
 
 header, nav {
@@ -131,7 +131,7 @@ footer {
   background: $background-color-02;
   padding: 15px;
   border-top: 2px solid #000;
-  font-size: 1em;
+  font-size: 0.9em;
   letter-spacing: .2em;
   display: flex;
   justify-content: space-between;
@@ -150,7 +150,7 @@ footer {
 .infobox {
   h2 {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   background: $background-color-02;
   padding: 0 20px;
@@ -163,7 +163,7 @@ footer {
     width: 100%;
   }
   p {
-    padding: 45px;
+    padding: 35px;
   }
   #lesson-description {
     padding-right: 0px;
