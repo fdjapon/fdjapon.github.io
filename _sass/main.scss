@@ -20,7 +20,7 @@ h2 {
 }
 
 #name {
-  font-size: 0.7em;
+  font-size: 1em;
   letter-spacing: 0.7em;
   font-family: Cormorant, sans-serif;
   font-weight: 400;
@@ -131,7 +131,7 @@ footer {
   background: $background-color-02;
   padding: 15px;
   border-top: 2px solid #000;
-  font-size: 2em;
+  font-size: 1em;
   letter-spacing: .2em;
   display: flex;
   justify-content: space-between;
@@ -140,7 +140,7 @@ footer {
 #activities {
   $gap: 15px;
   display: flex;
-  margin: 30px 0-$gap;
+  margin: 15px 0-$gap;
   > div {
     flex: 1;
     margin: 0 $gap; 
@@ -150,12 +150,12 @@ footer {
 .infobox {
   h2 {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
   }
   background: $background-color-02;
-  padding: 0 20px;
-  margin: 30px 0;
-  border: 1px solid #000;
+  padding: 0 10px;
+  margin: 15px 0;
+  border: 2px solid #000;
 }
 
 @media screen and (max-width: 1280px) {
