@@ -19,9 +19,9 @@
     <nav>
 	    <a href="{{ baseurl }}"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
       <ul>
-	      <a href="{{ baseurl }}"><li {% if page.url == "{{ baseurl }}" %}class="active"{% endif %}>HOME</li></a>
-	      <a href="{{ baseurl }}reservations"><li {% if page.url != "{{ baseurl }}" %}class="active"{% endif %}>RESERVATIONS</li></a>
-	      <a href="{{ baseurl }}a-propos"><li {% if page.url != "{{ baseurl }}" %}class="active"{% endif %}>À PROPOS</li></a>
+	      <a href="/"><li {% if page.url == "/" %}class="active"{% endif %}>HOME</li></a>
+	      <a href="/reservations"><li {% if page.url != "/" %}class="active"{% endif %}>RESERVATIONS</li></a>
+	      <a href="/a-propos"><li {% if page.url != "/" %}class="active"{% endif %}>À PROPOS</li></a>
       </ul>
     </nav>
     <div id="content">
