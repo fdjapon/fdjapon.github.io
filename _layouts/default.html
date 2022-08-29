@@ -16,6 +16,13 @@
     <header>
       <a href="/"><h1><span id="name">FD</span><br/>JAPON</h1></a>
     </header>
+    <nav>
+      <a href="/"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
+      <ul>
+        <a href="/"><li {% if page.url == "/" %}class="active"{% endif %}>HOME</li></a>
+        <a href="/a-propos"><li {% if page.url != "/" %}class="active"{% endif %}>À PROPOS</li></a>
+      </ul>
+    </nav>
     <div id="content">
       {{ content}}
     </div>
