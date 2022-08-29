@@ -2,15 +2,15 @@ $background-color: #fffcf5;;
 
 body {
   margin: 0;
-  background: url('/assets/back.jpg');
+  background: url('/assets/images/back.jpg');
   background-size: auto;
-  font-family: raleway, sans-serif;
+  font-family: Cormorant, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 h1, h2 {
-  font-family: bookmania, serif;
+  font-family: Cormorant, serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -22,7 +22,7 @@ h2 {
 #name {
   font-size: 0.5em;
   letter-spacing: 0.7em;
-  font-family: raleway, sans-serif;
+  font-family: Cormorant, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -138,61 +138,6 @@ button {
   }
 }
 
-#modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.45);
-  > div {
-    display: flex;
-    position: relative;
-    background-color: $background-color;
-    margin: auto;
-    padding: 40px;
-    border: 1px solid #000;
-    width: 800px;
-    > div {
-      flex: 1;
-    }
-    p {
-      padding: 0;
-    }
-    .booking p {
-      padding-top: 12px;
-    }
-    #lesson-id {
-      display: none;
-    }
-    #lesson-description {
-      padding-right: 20px;
-    }
-    #lesson-time:first-letter {
-        text-transform: uppercase;
-    }
-    #lesson-warning{
-      font-style: italic;
-    }
-  }
-  #close-modal {
-    position: absolute;
-    right: 9px;
-    top: 4px;
-    color: #aaa;
-    float: right;
-    font-size: 35px;
-    font-weight: bold;
-    &:hover, &:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    } 
-  }
-}
-
 footer {
   margin-top:auto;
   min-height: 20px;
@@ -207,7 +152,7 @@ footer {
 
 @media screen and (max-width: 1280px) {
   #content {
-    width: 75%;
+    width: 100%;
   }
   p {
     padding: 45px;
