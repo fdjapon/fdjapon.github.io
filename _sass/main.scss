@@ -156,6 +156,16 @@ footer {
   }
 }
 
+#infos-home {
+  $gap: 15px;
+  display: flex;
+  margin: 15px 0-$gap;
+  > div {
+    flex: 1;
+    margin: 0 $gap;
+  }
+}
+
 .infobox {
   h2 {
     text-align: center;
