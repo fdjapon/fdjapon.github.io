@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0">
     <meta charset="utf-8">
-    <title>{{ page.title }}{{ site.title }}</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
     <meta name="description" content="{{ page.description }}">
     {% if page.noindex == "1" %}
     <meta name="robots" content="noindex">
@@ -14,20 +14,21 @@
   </head>
   <body>
     <header>
-      <a href="/"><h1><span id="name">FD</span><br/>JAPON</h1></a>
+	    <a href="{{ baseurl }}"><h1><span id="name">FD</span><br/>JAPON</h1></a>
     </header>
     <nav>
-      <a href="/"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
+	    <a href="{{ baseurl }}"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
       <ul>
-        <a href="/"><li {% if page.url == "/" %}class="active"{% endif %}>HOME</li></a>
-        <a href="/a-propos"><li {% if page.url != "/" %}class="active"{% endif %}>À PROPOS</li></a>
+	      <a href="{{ baseurl }}"><li {% if page.url == "{{ baseurl }}" %}class="active"{% endif %}>HOME</li></a>
+	      <a href="{{ baseurl }}reservations"><li {% if page.url != "{{ baseurl }}" %}class="active"{% endif %}>RESERVATIONS</li></a>
+	      <a href="{{ baseurl }}a-propos"><li {% if page.url != "{{ baseurl }}" %}class="active"{% endif %}>À PROPOS</li></a>
       </ul>
     </nav>
     <div id="content">
       {{ content}}
     </div>
     <footer>
-      <div>Contact : fd_test01@avrt.fr</div>
+      <div>Contact : {{ email }}</div>
       <div>© FD</div>
     </footer>
   </div>
