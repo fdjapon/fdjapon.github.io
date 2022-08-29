@@ -14,10 +14,10 @@
   </head>
   <body>
     <header>
-	    <a href="{{ baseurl }}"><h1><span id="name">FD</span><br/>JAPON</h1></a>
+	    <a href="/"><h1><span id="name">FD</span><br/>JAPON</h1></a>
     </header>
     <nav>
-	    <a href="{{ baseurl }}"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
+	    <a href="/"><img id="logo" src="{{ '/assets/images/LOGO_08_2022-01.svg' | relative_url }}"/></a>
       <ul>
 	      <a href="/"><li {% if page.url == "/" %}class="active"{% endif %}>HOME</li></a>
 	      <a href="/reservations"><li {% if page.url != "/" %}class="active"{% endif %}>RESERVATIONS</li></a>
@@ -28,7 +28,7 @@
       {{ content}}
     </div>
     <footer>
-      <div>Contact : {{ email }}</div>
+      <div>Contact : {{ site.email }}</div>
       <div>© FD</div>
     </footer>
   </div>
