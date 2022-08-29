@@ -20,7 +20,7 @@ h2 {
 }
 
 #name {
-  font-size: 0.5em;
+  font-size: 0.7em;
   letter-spacing: 0.7em;
   font-family: Cormorant, sans-serif;
   font-weight: 400;
@@ -131,10 +131,31 @@ footer {
   background: $background-color-02;
   padding: 15px;
   border-top: 2px solid #000;
-  font-size: .7em;
+  font-size: 2em;
   letter-spacing: .2em;
   display: flex;
   justify-content: space-between;
+}
+
+#activities {
+  $gap: 15px;
+  display: flex;
+  margin: 30px 0-$gap;
+  > div {
+    flex: 1;
+    margin: 0 $gap; 
+  }
+}
+
+.infobox {
+  h2 {
+    text-align: center;
+    margin-top: 40px;
+  }
+  background: $background-color-02;
+  padding: 0 20px;
+  margin: 30px 0;
+  border: 1px solid #000;
 }
 
 @media screen and (max-width: 1280px) {
@@ -166,6 +187,12 @@ footer {
   }
   p {
     padding: 10px;
+  }
+  #activities > div, .infobox {
+    border-left: unset;
+    border-right: unset;
+    margin: 0px;
+    padding: 30px;
   }
   #modal > div {
     padding: 15px;
