@@ -46,7 +46,11 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       titleFormat: { day: 'numeric', month: 'short' },
       locale: 'fr',
       firstDay: 1,
+      buttonText: {
+        today: "Aujourd'hui" 
+      },
       height: "auto"
+
     });
     calendar.render();
   });
