@@ -54,7 +54,14 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         today: "Aujourd'hui" 
       },
       height: "auto"
+      eventClick: function(info) {
+        alert('Event: ' + info.event.title);
+        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        alert('View: ' + info.view.type);
 
+        // change the border color just for fun
+        info.el.style.borderColor = 'red';
+      }
     });
     calendar.render();
   });
