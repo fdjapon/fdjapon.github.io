@@ -44,6 +44,10 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       initialView: 'timeGridWeek',
       titleFormat: { day: 'numeric', month: 'short' },
       locale: 'fr',
+      weekends: 'false',
+      slotDuration: '01:00:00',
+      slotMinTime: '08:00:00',
+      slotMaxTime: '21:00:00',
       firstDay: 1,
       buttonText: {
         today: "Aujourd'hui" 
