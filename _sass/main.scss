@@ -137,7 +137,7 @@ footer {
   justify-content: space-between;
 }
 
-#infos-perso, #activities, #infos-home {
+#infos-perso, #activities, #infos-home, #calendar {
   $gap: 15px;
   display: flex;
   margin: 15px 0-$gap;
@@ -157,6 +157,56 @@ footer {
   margin: 15px 0;
   border: 2px solid #000;
 }
+  #calendar {
+    h2 {
+      font-family: Cormorant, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.4em;
+    }
+    .fc-button {
+      width: unset;
+      background-color: var(--fc-button-bg-color,#000);
+      border: 0px;
+      &.fc-today-button {
+        &:disabled {
+          opacity: 1;
+        }
+        color: #000;
+        background-color: #b76a3d59;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+      }
+      &.fc-prev-button, &.fc-next-button  {
+        background-color: #74503b;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+      }
+    }
+    .fc-col-header-cell-cushion {
+      padding: 6px 10px;
+    }
+    .fc-col-header-cell-cushion {
+      font-weight: normal;
+    }
+    .fc-button:focus, .fc-button-primary:focus {
+      box-shadow: unset;
+    }
+    .fc-scrollgrid-section-sticky > * {
+      background-color: #b76a3d59;
+      z-index: unset;
+    }
+    .fc-daygrid-day.fc-day-today {
+      background-color: #ececec;
+    }
+    .fc-event-main-frame {
+      flex-direction: column;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    tbody tr {
+      height: 60px;
+    }
+  }
 
 @media screen and (max-width: 1280px) {
   #content {
@@ -181,19 +231,19 @@ footer {
   p {
     padding: 10px;
   }
-  #activities, #infos-perso, #infos-home > div, .infobox {
+  #activities, #infos-perso, #infos-home, #calendar > div, .infobox {
     border-left: unset;
     border-right: unset;
     margin: 0px;
     padding: 30px;
   }
-  #activities, #infos-perso, #infos-home {
+  #activities, #infos-perso, #infos-home, #calendar {
     margin: unset;
   }
-  #activities, #infos-perso, #infos-home > p {
+  #activities, #infos-perso, #infos-home, #calendar > p {
     padding: 0;
   }
-  #activities, #infos-perso, #infos-home {
+  #activities, #infos-perso, #infos-home, #calendar {
     flex-direction:column;
   }
   #modal > div {
