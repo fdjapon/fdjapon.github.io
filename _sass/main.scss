@@ -137,32 +137,13 @@ footer {
   justify-content: space-between;
 }
 
-#activities {
+#infos-perso, #activities, #infos-home {
   $gap: 15px;
   display: flex;
   margin: 15px 0-$gap;
   > div {
     flex: 1;
     margin: 0 $gap; 
-  }
-}
-#infos-perso {
-  $gap: 15px;
-  display: flex;
-  margin: 15px 0-$gap;
-  > div {
-    flex: 1;
-    margin: 0 $gap; 
-  }
-}
-
-#infos-home {
-  $gap: 15px;
-  display: flex;
-  margin: 15px 0-$gap;
-  > div {
-    flex: 1;
-    margin: 0 $gap;
   }
 }
 
@@ -184,13 +165,6 @@ footer {
   p {
     padding: 35px;
   }
-  #lesson-description {
-    padding-right: 0px;
-  }
-  #news {
-    padding: 5px 20px;
-    margin: 0px 0 30px;
-  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -207,11 +181,20 @@ footer {
   p {
     padding: 10px;
   }
-  #activities > div, .infobox {
+  #activities, #infos-perso, #infos-home > div, .infobox {
     border-left: unset;
     border-right: unset;
     margin: 0px;
     padding: 30px;
+  }
+  #activities, #infos-perso, #infos-home {
+    margin: unset;
+  }
+  #activities, #infos-perso, #infos-home > p {
+    padding: 0;
+  }
+  #activities, #infos-perso, #infos-home {
+    flex-direction:column;
   }
   #modal > div {
     padding: 15px;
