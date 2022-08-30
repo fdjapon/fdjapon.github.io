@@ -37,6 +37,27 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth'
+      initialView: 'dayGridWeek',
+      titleFormat: { day: 'numeric', month: 'short' },
+      locale: 'fr',
+      firstDay: 1,
+      buttonText: {
+        today: "Aujourd'hui"
+      },
+      eventDisplay: "block",
+      eventTimeFormat: {
+        hour: '2-digit',
+        minute: '2-digit',
+        meridiem: false
+      },
+      height: "auto",
+      datesSet: (dateInfo) => {
+        if (firstRender) {
+          firstRender = false
+        } else {
+          console.log('Failed init calendar', {range: dateInfo.view.title})
+        }
+      },
     });
     calendar.render();
   });
