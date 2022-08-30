@@ -26,7 +26,12 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   </div>
 </div>
 
-<div id="calendar">
+<div id="book">
+  <div>
+    <h2>Mes prochaines disponibilités</h2>
+    <p>Cliquez sur un créneau disponible afin de réserver.</p>
+    <div id="calendar"></div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" integrity="sha256-7PzqE1MyWa/IV5vZumk1CVO6OQbaJE4ns7vmxuUP/7g=" crossorigin="anonymous"></script>
@@ -50,6 +55,14 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         minute: '2-digit',
         meridiem: false
       }
+      height: "auto",
+      datesSet: (dateInfo) => {
+        if (firstRender) {
+          firstRender = false
+        } else {
+          console.log('changeCalendarView', {range: dateInfo.view.title});
+        }
+      },
     });
     calendar.render();
   });

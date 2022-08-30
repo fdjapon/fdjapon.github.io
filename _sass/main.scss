@@ -157,6 +157,28 @@ footer {
   margin: 15px 0;
   border: 2px solid #000;
 }
+
+#book {
+  $gap: 15px;
+  display: flex;
+  margin: 30px 0-$gap;
+  > * {
+    background: $background-color;
+    margin: 0 $gap; 
+    border: 1px solid #000;
+    padding: 40px;
+  }
+  > div {
+    flex: 70 70 0;
+    p {
+      padding: 0px;
+      margin: -17px 0px 8px;
+      font-style: italic;
+    }
+  }
+  > p {
+    flex: 30 30 0;
+  }
   #calendar {
     h2 {
       font-family: Cormorant, sans-serif;
@@ -207,6 +229,7 @@ footer {
       height: 60px;
     }
   }
+}
 
 @media screen and (max-width: 1280px) {
   #content {
@@ -231,7 +254,7 @@ footer {
   p {
     padding: 10px;
   }
-  #activities, #infos-perso, #infos-home > div, .infobox {
+  #book > *, #activities, #infos-perso, #infos-home > div, .infobox {
     border-left: unset;
     border-right: unset;
     margin: 0px;
@@ -243,10 +266,22 @@ footer {
   #activities, #infos-perso, #infos-home > p {
     padding: 0;
   }
-  #activities, #infos-perso, #infos-home {
+  #book, #activities, #infos-perso, #infos-home {
     flex-direction:column;
   }
-  #calendar .fc-col-header-cell-cushion {
+  
+  #book > div {
+    padding: 5px;
+    & > h2 {
+      text-align: center;
+    }
+    p {
+      margin: -12px 0px 15px;
+      text-align: center;
+    }
+  }
+
+  #book #calendar .fc-col-header-cell-cushion {
     padding: 6px 4px;
   }
   #modal > div {
