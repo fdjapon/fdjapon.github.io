@@ -56,13 +56,6 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         meridiem: false
       }
       height: "auto",
-      datesSet: (dateInfo) => {
-        if (firstRender) {
-          firstRender = false
-        } else {
-          console.log('changeCalendarView', {range: dateInfo.view.title});
-        }
-      },
     });
     calendar.render();
   });
