@@ -25,7 +25,28 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       </p>
   </div>
 </div>
-
+<div id="modal">
+  <div>
+    <span id="close-modal">&times;</span>
+    <div id="reservation-infos">
+    	<h2 id="reservation-title"></h2>
+    	<p>
+    		Durée : <span id="lesson-duration"></span><br/>
+		<input id="startTime" type="datetime-local" name="startTime" value="">
+    		<p id="lesson-description"></p>
+    		<p id="lesson-warning">Tous niveaux.<br/>Cours non adapté aux femmes enceintes.</p>
+    	</p>
+    </div>
+    <div class="booking" id="booking-info">
+    	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations pour vous connecter au cours.</p>
+    	<input type="email" name="email" placeholder="jekiffeleyoga@gmail.com" id="email" />
+    	<button id="lesson-book" disabled="disabled" type="submit"><span id="wait"></span></button>
+    </div>
+    <div class="booking" id="booking-full">
+    	<p>Oups, vous avez choisi un créneau non disponible !</p>
+    </div>
+  </div>
+</div>
 <div id="book">
   <div>
     <h2>Mes prochaines disponibilités</h2>
@@ -57,6 +78,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
         alert('selected ');
+	document.getElementById("startTime").value = info.start;
+	document.getElementById("endTime").value = info.end;
 	console.log(Object.values(info));
 	console.log(Object.keys(info));
       }
