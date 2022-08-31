@@ -118,7 +118,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       firstDay: 1,
       validRange: {
         start: moment().format('YYYY-MM-DD'),
-        end: },
+        end: '2100-01-01'
+      },
       businessHours: {
         startTime: moment().format('HH:mm'),
         endTime: '20:00',
