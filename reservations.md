@@ -56,10 +56,20 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       height: "auto",
       selectable: true,
       select: function(info) {
-        alert('selected ' + info);
+        alert('selected ' + info.event.start info.event.end);
       }
     });
     calendar.render();
   });
+  function datetimeToFrenchDatetimeAndDuration(start, end) {
+    const durationMs = end - start
+    const durationHour = parseInt(durationMs/(3600*1000))
+    const durationMinute = String(parseInt(durationMs/(60*1000))%60).padStart(2, '0')
+    const durationHuman = (durationHour > 0) ? durationHour + "h" + durationMinute : durationMinute + " min"
+    const monthNames = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    const dayNames = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    const startHuman = `${dayNames[start.getDay() - 1]} ${start.getDate()} ${monthNames[start.getMonth()]} à ${start.getHours()}h${String(start.getMinutes()).padStart(2, '0')}`
+    return {durationHuman, startHuman}
+  }
 </script>
 
