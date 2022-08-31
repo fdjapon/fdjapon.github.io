@@ -61,6 +61,9 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     });
     calendar.render();
   });
+</script>
+
+<script defer type="text/javascript">
   function datetimeToFrenchDatetimeAndDuration(start, end) {
     const durationMs = end - start
     const durationHour = parseInt(durationMs/(3600*1000))
@@ -72,4 +75,3 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     return {durationHuman, startHuman}
   }
 </script>
-
