@@ -71,7 +71,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
                 </td>
               </tr>
               <tr>
-                <td>
+                <td colspan="2">
                   <button id="reservation-confirmation" disabled="disabled" type="submit"><span id="wait"></span></button>
                 </td>
               </tr>
@@ -116,6 +116,14 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       slotMinTime: '08:00:00',
       slotMaxTime: '21:00:00',
       firstDay: 1,
+      validRange: {
+        start: moment().format('YYYY-MM-DD'),
+        end: },
+      businessHours: {
+        start: moment().format('HH:mm'),
+        end: '20:00',
+        dow: [1,2,3,4,5]
+      },
       buttonText: {
         today: "Aujourd'hui" 
       },
@@ -123,9 +131,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
 	modal.style.display = "flex";
+	console.log(info.start);
 	document.getElementById("reservation-startTime").value = info.start;
+	console.log(info.end);
 	document.getElementById("reservation-endTime").value = info.end;
-	console.log(datetimeToFrenchDatetimeAndDuration(info.start, info.end));
+	convert = datetimeToFrenchDatetimeAndDuration(info.start, info.end));
+	console.log(convert["durationHuman"]);
+	console.log(convert["startHuman"]);
 	/*console.log(Object.values(info));
 	console.log(Object.keys(info));*/
       }
@@ -144,5 +156,21 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     const dayNames = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
     const startHuman = `${dayNames[start.getDay() - 1]} ${start.getDate()} ${monthNames[start.getMonth()]} à ${start.getHours()}h${String(start.getMinutes()).padStart(2, '0')}`
     return {durationHuman, startHuman}
+  }
+  function animateWaitElement(waitEl, button) {
+    const oldButtonText = button.innerText
+    button.disabled = true
+    const dotsSetInterval = setInterval(() => {
+      if (waitEl.innerHTML.length > 3 ) 
+        waitEl.innerHTML = ""
+      else 
+        waitEl.innerHTML += "."
+    }, 250)
+    return () => {
+      clearInterval(dotsSetInterval)
+      waitEl.innerHTML = ""
+      button.innerText = oldButtonText
+      button.disabled = false
+    }
   }
 </script>
