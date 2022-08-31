@@ -57,6 +57,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
         alert('selected ');
+	console.log(Object.values(info));
         console.log(info[0]);
         console.log(info[1]);
         console.log(info[2]);
