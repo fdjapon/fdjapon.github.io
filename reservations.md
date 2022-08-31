@@ -33,21 +33,21 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     	<h2 id="reservation-title">Réservation :</h2>
     	<p>
 		Début de la réservation :
-		</br> 
+		<br> 
 		<input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
-		</br>
+		<br>
 		Fin de la réservation : 
-		</br>
+		<br>
 		<input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
-		</br>
+		<br>
     		Type de la réservation : 
-		</br>
+		<br>
 		<select id="reservation-type" name="reservation-type">
 			<option value="cours">Cours</option>
     			<option value="traduction">Traduction</option>
     			<option value="conseil">Conseil</option>
   		</select>
-		</br>
+		<br>
     	</p>
     	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .</p>
     	<input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
@@ -90,10 +90,11 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
         alert('selected ');
+	modal.style.display = "flex";
 	document.getElementById("startTime").value = info.start;
 	document.getElementById("endTime").value = info.end;
-	console.log(Object.values(info));
-	console.log(Object.keys(info));
+	/*console.log(Object.values(info));
+	console.log(Object.keys(info));*/
       }
     });
     calendar.render();
