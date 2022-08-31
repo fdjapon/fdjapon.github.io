@@ -31,32 +31,57 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     <span id="close-modal">&times;</span>
     <div id="reservation-infos">
     	<h2 id="reservation-title">Réservation :</h2>
-    	<p>
-		Début de la réservation :
-		<br> 
-		<input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
-		<br>
-		Fin de la réservation : 
-		<br>
-		<input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
-		<br>
-    		Type de la réservation : 
-		<br>
-		<select id="reservation-type" name="reservation-type">
-			<option value="cours">Cours</option>
-    			<option value="traduction">Traduction</option>
-    			<option value="conseil">Conseil</option>
-  		</select>
-		<br>
-    	</p>
-    	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .</p>
-    	<input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
-    	<button id="reservation-confirmation" disabled="disabled" type="submit"><span id="wait"></span></button>
+	<p>
+	  <table>
+  	    <tbody>
+    	      <tr>
+                <td>
+                  Début de la réservation :
+                </td>
+                <td>
+                  <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Fin de la réservation :
+                </td> 
+                <td>
+                  <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Type de la réservation : 
+                </td>
+                <td>
+                  <select id="reservation-type" name="reservation-type">
+                    <option value="cours">Cours</option>
+    	            <option value="traduction">Traduction</option>
+    	            <option value="conseil">Conseil</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .
+                </td>
+                <td>
+                  <input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button id="reservation-confirmation" disabled="disabled" type="submit"><span id="wait"></span></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+      <div class="booking" id="booking-full">
+        <p>Oups, vous avez choisi une plage horaire non disponible !</p>
+      </div>
     </div>
-    <div class="booking" id="booking-full">
-    	<p>Oups, vous avez choisi une plage horaire non disponible !</p>
-    </div>
-  </div>
 </div>
 
 <div id="book">
