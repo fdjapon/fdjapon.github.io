@@ -82,6 +82,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         <p>Oups, vous avez choisi une plage horaire non disponible !</p>
       </div>
     </div>
+  </div>
 </div>
 
 <div id="book">
@@ -116,8 +117,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       select: function(info) {
         alert('selected ');
 	modal.style.display = "flex";
-	document.getElementById("startTime").value = info.start;
-	document.getElementById("endTime").value = info.end;
+	document.getElementById("reservation-startTime").value = info.start;
+	document.getElementById("reservation-endTime").value = info.end;
 	/*console.log(Object.values(info));
 	console.log(Object.keys(info));*/
       }
