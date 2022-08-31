@@ -25,13 +25,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       </p>
   </div>
 </div>
+
 <div id="modal">
   <div>
     <span id="close-modal">&times;</span>
     <div id="reservation-infos">
-    	<h2 id="reservation-title"></h2>
+    	<h2 id="reservation-title">Réservation :</h2>
     	<p>
-    		Durée : <span id="lesson-duration"></span><br/>
 		Début de la réservation : <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
 		Fin de la réservation : <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
     		Type de la réservation : <select id="reservation-type" name="reservation-type">
@@ -40,17 +40,16 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     						<option value="conseil">Conseil</option>
   					</select>
     	</p>
-    </div>
-    <div class="booking" id="booking-info">
-    	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations pour vous connecter au cours.</p>
-    	<input type="email" name="email" placeholder="votremail@gmail.com" id="email" />
-    	<button id="lesson-book" disabled="disabled" type="submit"><span id="wait"></span></button>
+    	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .</p>
+    	<input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
+    	<button id="reservation-confirmation" disabled="disabled" type="submit"><span id="wait"></span></button>
     </div>
     <div class="booking" id="booking-full">
-    	<p>Oups, vous avez choisi un créneau non disponible !</p>
+    	<p>Oups, vous avez choisi une plage horaire non disponible !</p>
     </div>
   </div>
 </div>
+
 <div id="book">
   <div>
     <h2>Mes prochaines disponibilités</h2>
