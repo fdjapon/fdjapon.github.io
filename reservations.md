@@ -32,14 +32,18 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     	<h2 id="reservation-title"></h2>
     	<p>
     		Durée : <span id="lesson-duration"></span><br/>
-		<input id="startTime" type="datetime-local" name="startTime" value="">
-    		<p id="lesson-description"></p>
-    		<p id="lesson-warning">Tous niveaux.<br/>Cours non adapté aux femmes enceintes.</p>
+		Début de la réservation : <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
+		Fin de la réservation : <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
+    		Type de la réservation : <select id="reservation-type" name="reservation-type">
+						<option value="cours">Cours</option>
+    						<option value="traduction">Traduction</option>
+    						<option value="conseil">Conseil</option>
+  					</select>
     	</p>
     </div>
     <div class="booking" id="booking-info">
     	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations pour vous connecter au cours.</p>
-    	<input type="email" name="email" placeholder="jekiffeleyoga@gmail.com" id="email" />
+    	<input type="email" name="email" placeholder="votremail@gmail.com" id="email" />
     	<button id="lesson-book" disabled="disabled" type="submit"><span id="wait"></span></button>
     </div>
     <div class="booking" id="booking-full">
