@@ -53,7 +53,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       buttonText: {
         today: "Aujourd'hui" 
       },
-      height: "auto",
+      height: "auto"
       select: function(startDate, endDate, jsEvent, view, resource) {
         alert('selected ' + startDate.format() + ' to ' + endDate.format() + ' on resource ' + resource.id);
       }
