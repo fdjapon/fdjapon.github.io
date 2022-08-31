@@ -97,6 +97,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
 
 <script>
+  closeModal = () => { 
+    modal.style.display = "none"; 
+  }
+  document.getElementById("close-modal").addEventListener("click", closeModal)
+  window.addEventListener("click", (event) => {
+    event.target == modal && closeModal()
+  })
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
