@@ -120,9 +120,9 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         start: moment().format('YYYY-MM-DD'),
         end: },
       businessHours: {
-        start: moment().format('HH:mm'),
-        end: '20:00',
-        dow: [1,2,3,4,5]
+        startTime: moment().format('HH:mm'),
+        endTime: '20:00',
+        daysOfWeeks: [1,2,3,4,5]
       },
       buttonText: {
         today: "Aujourd'hui" 
