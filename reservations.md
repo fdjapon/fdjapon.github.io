@@ -56,7 +56,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       height: "auto",
       selectable: true,
       select: function(info) {
-        alert('selected ' + info.event.start + '' + info.event.end);
+        alert('selected ');
+        console.log(info[0]);
+        console.log(info[1]);
+        console.log(info[2]);
+        console.log(info[3]);
+        console.log(info[4]);
+        console.log(info[5]);
       }
     });
     calendar.render();
