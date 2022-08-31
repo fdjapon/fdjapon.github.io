@@ -137,8 +137,6 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
 	console.log(info.end);
 	document.getElementById("reservation-endTime").value = info.end;
 	convert = datetimeToFrenchDatetimeAndDuration(info.start, info.end));
-	console.log(convert["durationHuman"]);
-	console.log(convert["startHuman"]);
 	/*console.log(Object.values(info));
 	console.log(Object.keys(info));*/
       }
