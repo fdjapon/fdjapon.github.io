@@ -32,13 +32,22 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     <div id="reservation-infos">
     	<h2 id="reservation-title">Réservation :</h2>
     	<p>
-		Début de la réservation : <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
-		Fin de la réservation : <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
-    		Type de la réservation : <select id="reservation-type" name="reservation-type">
-						<option value="cours">Cours</option>
-    						<option value="traduction">Traduction</option>
-    						<option value="conseil">Conseil</option>
-  					</select>
+		Début de la réservation :
+		</br> 
+		<input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
+		</br>
+		Fin de la réservation : 
+		</br>
+		<input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
+		</br>
+    		Type de la réservation : 
+		</br>
+		<select id="reservation-type" name="reservation-type">
+			<option value="cours">Cours</option>
+    			<option value="traduction">Traduction</option>
+    			<option value="conseil">Conseil</option>
+  		</select>
+		</br>
     	</p>
     	<p>Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .</p>
     	<input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
