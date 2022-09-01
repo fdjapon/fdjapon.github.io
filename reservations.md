@@ -93,6 +93,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.js" integrity="sha256-wz8JpOEjDzB1vo0qlAgRCNUvYtPDC5ojiUH+gHkCZ8Y=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" integrity="sha256-7PzqE1MyWa/IV5vZumk1CVO6OQbaJE4ns7vmxuUP/7g=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
 
@@ -121,7 +122,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         end: '2100-01-01'
       },
       businessHours: {
-        startTime: moment().format('HH:mm'),
+        startTime: moment().format('hh:mm'),
         endTime: '20:00',
         daysOfWeeks: [1,2,3,4,5]
       },
