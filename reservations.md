@@ -39,7 +39,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
                   Début de la réservation :
                 </td>
                 <td>
-                  <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="">
+                  <input id="reservation-startTime" type="datetime-local" name="reservation-startTime" value="" min="" max="" step="3600">
                 </td>
               </tr>
               <tr>
@@ -47,7 +47,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
                   Fin de la réservation :
                 </td> 
                 <td>
-                  <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="">
+                  <input id="reservation-endTime" type="datetime-local" name="reservation-endTime" value="" min="" max="" step="3600">
                 </td>
               </tr>
               <tr>
@@ -98,6 +98,14 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
 
 <script>
+  const minReservationDay = moment().format('YYYY-MM-DD');
+  const maxReservationDay = moment().add(30,'days').format('YYYY-MM-DD'); 
+  const minReservationTime = '08:00';
+  const maxReservationTime = '21:00';
+  const durationSlot = '01:00';
+  const minReservationDayTime = moment().format('YYYY-MM-DDT08:00');
+  const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
+  
   closeModal = () => { 
     modal.style.display = "none"; 
   }
@@ -106,6 +114,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     event.target == modal && closeModal()
   })
   document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("reservation-endTime").min = moment().format('YYYY-MM-DDTHH:mm');
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'timeGridWeek',
@@ -113,17 +122,17 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       locale: 'fr',
       weekends: false,
       allDaySlot: false,
-      slotDuration: '01:00:00',
-      slotMinTime: '08:00:00',
-      slotMaxTime: '21:00:00',
+      slotDuration: durationSlot,
+      slotMinTime: minReservationTime,
+      slotMaxTime: maxReservationTime,
       firstDay: 1,
       validRange: {
-        start: moment().format('YYYY-MM-DD'),
-        end: moment().add(30, 'days').format('YYYY-MM-DD')
+        start: minReservationDay,
+        end: maxReservationDay
       },
       businessHours: {
-        startTime: moment().format('hh:mm'),
-        endTime: '20:00',
+        startTime: minReservationTime,
+        endTime: maxReservationTime,
         daysOfWeeks: [1,2,3,4,5]
       },
       buttonText: {
@@ -133,14 +142,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
 	modal.style.display = "flex";
-	document.getElementById("reservation-startTime").value = moment(info.start).format('YYYY-MM-DDTHH:mm');
-	document.getElementById("reservation-endTime").value = moment(info.end).format('YYYY-MM-DDTHH:mm');
-	convert = datetimeToFrenchDatetimeAndDuration(info.start, info.end);
-	console.log(convert);
-	console.log(moment().format('YYYY-MM-DD'));
-	console.log(moment().add(30, 'days').format('YYYY-MM-DD'));
-	/*console.log(Object.values(info));
-	console.log(Object.keys(info));*/
+	console.log('Selected');
+        populateModal(info.start, info.end);
       }
     });
     calendar.render();
@@ -174,4 +177,39 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       button.disabled = false
     }
   }
+  function getMaxSlot(startTimeReservation){
+    startSlot = startTimeReservation
+    endSlot = moment().format('YYYY-MM-DDT20:00')
+    maxSlot = endSlot.diff(startSlot, 'hours');
+    return maxSlot;
+  } 
+  function getMaxTimeReservation(){
+    return moment().format('YYYY-MM-DDT20:00')
+  }
+  function getMinTimeReservation(){
+    return moment().format('YYYY-MM-DDTHH:mm')
+  }
+  function checkSlotAlreadyPassed(startTimeReservation){
+    current = moment().format('YYYY-MM-DDTHH:mm')
+    if (current.diff(startTimeReservation, 'hours') < 1){
+      return False;
+    } else {
+      return True;
+    }
+  }
+  function populateModal(startSelectedSlot, endSelectedSlot){
+    if (checkSlotAlreadyPassed(startSelectedSlot.format('YYYY-MM-DDTHH:mm') === False)){
+      document.getElementById("reservation-startTime").min = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+      document.getElementById("reservation-startTime").value = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+      document.getElementById("reservation-endTime").min = moment(startSelectedSlot).add(2, 'hours').format('YYYY-MM-DDTHH:mm');
+      document.getElementById("reservation-endTime").value = moment(endSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+    } else {
+      document.getElementById("reservation-startTime").min = moment(startSelectedSlot).format('YYYY-MM-DDTHH:mm');
+      document.getElementById("reservation-startTime").value = moment(startSelectedSlot).format('YYYY-MM-DDTHH:mm');
+      document.getElementById("reservation-endTime").min = moment(endSelectedSlot).format('YYYY-MM-DDTHH:mm');
+    } 
+    document.getElementById("reservation-startTime").max = moment(maxReservationDayTime).subtract(1,'hours').format('YYYY-MM-DDTHH:mm');
+    document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).add(1,'hours').format('YYYY-MM-DDTHH:mm');
+  }
+    
 </script>
