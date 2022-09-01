@@ -133,8 +133,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       select: function(info) {
 	modal.style.display = "flex";
-	document.getElementById("reservation-startTime").value = info.start;
-	document.getElementById("reservation-endTime").value = info.end;
+	document.getElementById("reservation-startTime").value = moment(info.start).format('YYYY-MM-DDTHH:mm');
+	document.getElementById("reservation-endTime").value = moment(info.end).format('YYYY-MM-DDTHH:mm');
 	convert = datetimeToFrenchDatetimeAndDuration(info.start, info.end);
 	console.log(convert);
 	console.log(moment().format('YYYY-MM-DD'));
