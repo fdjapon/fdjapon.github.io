@@ -119,7 +119,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       firstDay: 1,
       validRange: {
         start: moment().format('YYYY-MM-DD'),
-        end: '2100-01-01'
+        end: moment().add(30, 'days').format('YYYY-MM-DD')
       },
       businessHours: {
         startTime: moment().format('hh:mm'),
@@ -136,6 +136,9 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
 	document.getElementById("reservation-startTime").value = info.start;
 	document.getElementById("reservation-endTime").value = info.end;
 	convert = datetimeToFrenchDatetimeAndDuration(info.start, info.end);
+	console.log(convert);
+	console.log(moment().format('YYYY-MM-DD'));
+	console.log(moment().add(30, 'days').format('YYYY-MM-DD'));
 	/*console.log(Object.values(info));
 	console.log(Object.keys(info));*/
       }
