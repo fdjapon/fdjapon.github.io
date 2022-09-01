@@ -143,7 +143,19 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       select: function(info) {
 	modal.style.display = "flex";
 	console.log('Selected');
-        populateModal(info.start, info.end);
+        /*populateModal(info.start, info.end);*/
+        if (checkSlotAlreadyPassed(info.start.format('YYYY-MM-DDTHH:mm')) === False)){
+          document.getElementById("reservation-startTime").min = moment(info.start).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+          document.getElementById("reservation-startTime").value = moment(info.start).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+          document.getElementById("reservation-endTime").min = moment(info.start).add(2, 'hours').format('YYYY-MM-DDTHH:mm');
+          document.getElementById("reservation-endTime").value = moment(info.end).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
+        } else {
+          document.getElementById("reservation-startTime").min = moment(info.start).format('YYYY-MM-DDTHH:mm');
+          document.getElementById("reservation-startTime").value = moment(info.start).format('YYYY-MM-DDTHH:mm');
+          document.getElementById("reservation-endTime").min = moment(info.end).format('YYYY-MM-DDTHH:mm');
+        } 
+        document.getElementById("reservation-startTime").max = moment(maxReservationDayTime).subtract(1,'hours').format('YYYY-MM-DDTHH:mm');
+        document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).add(1,'hours').format('YYYY-MM-DDTHH:mm');
       }
     });
     calendar.render();
@@ -197,7 +209,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       return True;
     }
   }
-  function populateModal(startSelectedSlot, endSelectedSlot){
+  /*function populateModal(startSelectedSlot, endSelectedSlot){
     if (checkSlotAlreadyPassed(startSelectedSlot.format('YYYY-MM-DDTHH:mm')) === False)){
       document.getElementById("reservation-startTime").min = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
       document.getElementById("reservation-startTime").value = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
@@ -210,6 +222,6 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     } 
     document.getElementById("reservation-startTime").max = moment(maxReservationDayTime).subtract(1,'hours').format('YYYY-MM-DDTHH:mm');
     document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).add(1,'hours').format('YYYY-MM-DDTHH:mm');
-  }
+  }*/
     
 </script>
