@@ -190,9 +190,10 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     return moment().format('YYYY-MM-DDTHH:mm')
   }
   function checkSlotAlreadyPassed(startTimeReservation){
-    console.log(moment(startTimeReservation).format('YYYY-MM-DDTHH:mm'));
-    c = moment().format('YYYY-MM-DDTHH:mm')
-    if (c.diff(moment(startTimeReservation).format('YYYY-MM-DDTHH:mm'), 'hours') < 1){
+    r = moment(startTimeReservation).format('YYYY-MM-DDTHH:mm');
+    c = moment().format('YYYY-MM-DDTHH:mm');
+    diff = c.diff(r, 'hours');
+    if (diff < 1){
       return False;
     } else {
       return True;
