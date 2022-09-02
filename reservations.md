@@ -142,7 +142,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       selectable: true,
       selectConstraint: {
         startTime: moment().add(2,'hours').startOf('hour').format('HH:mm'),
-        endTime: '21:00'
+        endTime: moment().add(30,'days').format('YYYY-MM-DDT21:00'); 
       },
       select: function(info) {
 	modal.style.display = "flex";
