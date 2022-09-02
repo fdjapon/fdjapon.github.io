@@ -141,8 +141,8 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       height: "auto",
       selectable: true,
       selectConstraint: {
-        startTime: moment().add(2,'hours').startOf('hour').format('HH:mm'),
-        endTime: moment().add(30,'days').format('21:00') 
+        startTime: '08:00',
+        endTime: '21:00' 
       },
       select: function(info) {
 	if (checkSlotValable(info.start) === true){
