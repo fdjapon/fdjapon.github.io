@@ -197,13 +197,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     diff = c.diff(r, 'hours');
     console.log(diff);
     if (diff < 1){
-      return False;
+      return false;
     } else {
-      return True;
+      return true;
     }
   }
   function populateModal(startSelectedSlot, endSelectedSlot){
-    if (checkSlotAlreadyPassed(startSelectedSlot) === False){
+    if (checkSlotAlreadyPassed(startSelectedSlot) === false){
       document.getElementById("reservation-startTime").min = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
       document.getElementById("reservation-startTime").value = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
       document.getElementById("reservation-endTime").min = moment(startSelectedSlot).add(2, 'hours').format('YYYY-MM-DDTHH:mm');
