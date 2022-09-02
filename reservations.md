@@ -123,7 +123,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       weekends: false,
       allDaySlot: false,
       slotDuration: durationSlot,
-      slotMinTime: moment().format('HH:mm'),
+      slotMinTime: moment().add(1,'hours').format('HH:mm'),
       slotMaxTime: maxReservationTime,
       firstDay: 1,
       validRange: {
