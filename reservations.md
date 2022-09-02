@@ -123,7 +123,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       weekends: false,
       allDaySlot: false,
       slotDuration: durationSlot,
-      slotMinTime: minReservationTime,
+      slotMinTime: moment().format('HH:mm'),
       slotMaxTime: maxReservationTime,
       firstDay: 1,
       validRange: {
@@ -191,9 +191,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   }
   function checkSlotAlreadyPassed(startTimeReservation){
     r = moment(startTimeReservation);
-    console.log(r + typeof(r));
     c = moment();
-    console.log(c + typeof(c));
     diff = c.diff(r, 'hours');
     console.log(diff);
     if (diff < 1){
