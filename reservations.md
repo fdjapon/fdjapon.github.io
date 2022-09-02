@@ -131,7 +131,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         end: maxReservationDay
       },
       businessHours: {
-        startTime: moment().add(2,'hours').startOf('hour').format('HH:mm'),
+        startTime: minReservationTime,
         endTime: maxReservationTime,
         daysOfWeeks: [1,2,3,4,5]
       },
