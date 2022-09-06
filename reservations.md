@@ -95,7 +95,10 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   	    <tbody>
     	      <tr>
                 <td colspan="2">
-                  Vous avez sélectionné une plage horaire non disponible ou déjà réservé veuillez réessayer . (Les réservations se font au minimu 3 heures avant afin de me laisser le temps de m'organiser . Merci de votre compréhension) 
+                  Vous avez sélectionné une plage horaire non disponible ou déjà réservée . Veuillez réessayer . 
+                </td>
+                <td colspan="2">
+                  Les réservations se font au minimum 3 heures avant afin de pouvoir m'organiser concernant la demande . Merci de votre compréhension .
                 </td>
               </tr>
             </tbody>
@@ -103,6 +106,26 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
         </p>
     </div>
   </div>
+</div>
+
+<div id="payment-successful" class="infobox end-of-flow-success">
+	Merci pour votre réservation ! Vous allez recevoir un email de confirmation.
+</div>
+
+<div id="cancel-successful" class="infobox end-of-flow-success">
+	Réservation annulée avec succès !
+</div>
+
+<div id="refund-successful" class="infobox end-of-flow-success">
+	Réservation remboursée avec succès ! Le remboursement se fera sur la carte bleue qui a servi au paiement sous 5 à 10 jours. Vous allez recevoir un email de confirmation.
+</div>
+
+<div id="postpone-successful" class="infobox end-of-flow-success">
+	Réservation reportée avec succès ! Vous allez reçevoir un email de confirmation. 
+</div>
+
+<div id="postpone-mode" class="infobox">
+	Pour finaliser votre report de réservation, veuillez sélectionner la nouvelle réservation qu'il vous convient. 
 </div>
 
 <div id="reservation">

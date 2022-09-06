@@ -281,6 +281,21 @@ footer {
 	display:none;
 }
 
+#payment-successful, 
+#cancel-successful, 
+#refund-successful,
+#postpone-successful,
+#postpone-mode { 
+  padding: 35px 20px;
+  text-align: center;
+  display: none;
+}
+
+.end-of-flow-success {
+  color: green;
+}
+
+
 @media screen and (max-width: 1280px) {
   #content {
     width: 100%;
