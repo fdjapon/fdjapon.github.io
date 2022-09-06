@@ -26,9 +26,9 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   </div>
 </div>
 
-<div id="modal">
+<div class="modal" id="modal-reservation">
   <div>
-    <span id="close-modal">&times;</span>
+    <span class="close-modal" id="close-modal-reservation">&times;</span>
     <div id="reservation-infos">
     	<h2 id="reservation-title">Réservation :</h2>
 	<p>
@@ -78,14 +78,34 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
             </tbody>
           </table>
         </p>
-      <div class="booking" id="booking-full">
+      <div class="reservation-f" id="reservation-full">
         <p>Oups, vous avez choisi une plage horaire non disponible !</p>
       </div>
     </div>
   </div>
 </div>
 
-<div id="book">
+<div class="modal" id="modal-reservation-not">
+  <div>
+    <span class="close-modal" id="close-modal-reservation-not">&times;</span>
+    <div id="not-reservation">
+    	<h2 id="reservation-title">Oops :</h2>
+	<p>
+	  <table>
+  	    <tbody>
+    	      <tr>
+                <td colspan="2">
+                  Vous avez sélectionné une plage horaire non disponible ou déjà réservé veuillez réessayer . (Les réservations se font au minimu 3 heures avant afin de me laisser le temps de m'organiser . Merci de votre compréhension) 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+    </div>
+  </div>
+</div>
+
+<div id="reservation">
   <div>
     <h2>Mes prochaines disponibilités</h2>
     <p>Cliquez sur un créneau disponible afin de réserver.</p>
@@ -107,11 +127,14 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
   
   closeModal = () => { 
-    modal.style.display = "none"; 
+    modal-reservation.style.display = "none"; 
+    modal-reservation-not.style.display = "none";
   }
-  document.getElementById("close-modal").addEventListener("click", closeModal)
+  document.getElementById("close-modal-reservation").addEventListener("click", closeModal)
+  document.getElementById("close-modal-reservation-not").addEventListener("click", closeModal)
   window.addEventListener("click", (event) => {
-    event.target == modal && closeModal()
+    event.target == modal-reservation && closeModal()
+    event.target == modal-reservation-not && closeModal()
   })
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("reservation-endTime").min = moment().format('YYYY-MM-DDTHH:mm');

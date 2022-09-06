@@ -158,10 +158,10 @@ footer {
   border: 2px solid #000;
 }
 
-#book {
+#reservation {
   $gap: 15px;
   display: flex;
-  margin: 15px 0-$gap;
+  margin: 30px 0-$gap;
   > * {
     background: $background-color-02;
     margin: 0 $gap; 
@@ -231,7 +231,7 @@ footer {
   }
 }
 
-#modal {
+.modal {
   display: none;
   position: fixed;
   z-index: 99999;
@@ -257,20 +257,8 @@ footer {
     .booking p {
       padding-top: 12px;
     }
-    #lesson-id {
-      display: none;
-    }
-    #lesson-description {
-      padding-right: 20px;
-    }
-    #lesson-time:first-letter {
-        text-transform: uppercase;
-    }
-    #lesson-warning{
-      font-style: italic;
-    }
   }
-  #close-modal {
+  .close-modal {
     position: absolute;
     right: 9px;
     top: 4px;
@@ -286,7 +274,7 @@ footer {
   }
 }
 
-.booking {
+.reservation-f {
 	display:none;
 }
 
@@ -313,7 +301,7 @@ footer {
   p {
     padding: 10px;
   }
-  #book > *, #activities, #infos-perso, #infos-home > div, .infobox {
+  #reservation > *, #activities, #infos-perso, #infos-home > div, .infobox {
     border-left: unset;
     border-right: unset;
     margin: 0px;
@@ -325,11 +313,11 @@ footer {
   #activities, #infos-perso, #infos-home > p {
     padding: 0;
   }
-  #book, #activities, #infos-perso, #infos-home {
+  #reservation, #activities, #infos-perso, #infos-home {
     flex-direction:column;
   }
   
-  #book > div {
+  #reservation > div {
     padding: 5px;
     & > h2 {
       text-align: center;
@@ -340,10 +328,10 @@ footer {
     }
   }
 
-  #book #calendar .fc-col-header-cell-cushion {
+  #reservation #calendar .fc-col-header-cell-cushion {
     padding: 6px 4px;
   }
-  #modal > div {
+  .modal > div {
     padding: 15px;
   }
 }
