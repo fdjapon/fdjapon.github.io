@@ -49,7 +49,7 @@ header {
 }
 
 #content {
-  margin: 40px auto;
+  margin: 20px auto;
   font-size: .95em;
   line-height: 1.2em;
 }
@@ -59,7 +59,7 @@ nav {
   min-height: 200px; /* Safari Fix... */
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   #logo {
     width: 200px;
   }
@@ -71,7 +71,7 @@ nav {
     margin: 0px;
     a {
       flex: auto;
-      margin: 5px 25px;
+      margin: 10px 5px;
       padding: 2px;
       text-decoration: none;
       color: black;
@@ -107,15 +107,15 @@ button, input {
 }
 input {
   width: 99.6%;
-  text-indent: 14px;
+  text-indent: 20px;
   &::placeholder {
-    color: #848484;
+    color: $background-color-01;
   }
 }
 button {
-  margin: 5px 0;
-  background: #74503b;
-  color: #fff;
+  margin: 10px 0;
+  background: $background-color-01;
+  color: $background-color-02;
   &:hover, &:focus {
     cursor: pointer;
   } 
@@ -129,8 +129,8 @@ footer {
   margin-top:auto;
   min-height: 20px;
   background: $background-color-02;
-  padding: 15px;
-  border-top: 2px solid #000;
+  padding: 20px;
+  border-top: 2px solid #000000;
   font-size: 0.9em;
   letter-spacing: .2em;
   display: flex;
@@ -140,7 +140,7 @@ footer {
 #infos-perso, #activities, #infos-home, {
   $gap: 15px;
   display: flex;
-  margin: 15px 0-$gap;
+  margin: 30px 0-$gap;
   > div {
     flex: 1;
     margin: 0 $gap; 
@@ -195,11 +195,11 @@ footer {
           opacity: 1;
         }
         color: #000;
-        background-color: #b76a3d59;
+        background-color: $background-color-01;
         box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
       }
       &.fc-prev-button, &.fc-next-button  {
-        background-color: #74503b;
+        background-color: $background-color-01;
         box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
       }
     }
@@ -213,11 +213,14 @@ footer {
       box-shadow: unset;
     }
     .fc-scrollgrid-section-sticky > * {
-      background-color: #b76a3d59;
+      background-color: $background-color-01;
       z-index: unset;
     }
-    .fc-daygrid-day.fc-day-today {
-      background-color: #ececec;
+    .fc-timegrid-cols.fc-day-today {
+      background-color: $background-color-01;
+    }
+    .fc-timegrid-cols.fc-day-disabled {
+      background-color: #7b6767;
     }
     .fc-event-main-frame {
       flex-direction: column;
