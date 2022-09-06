@@ -167,7 +167,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     const dayNames = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
     const startHuman = `${dayNames[start.getDay() - 1]} ${start.getDate()} ${monthNames[start.getMonth()]} à ${start.getHours()}h${String(start.getMinutes()).padStart(2, '0')}`
     return {durationHuman, startHuman}
-  }c
+  }
   function animateWaitElement(waitEl, button) {
     const oldButtonText = button.innerText
     button.disabled = true
