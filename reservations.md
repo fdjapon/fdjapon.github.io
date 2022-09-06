@@ -136,7 +136,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     event.target == modalReservation && closeModalReservation()
   })
   
-  closeModalReservation = () => { 
+  closeModalReservationNot = () => { 
     modalReservationNot.style.display = "none";
   }
   document.getElementById("close-modal-reservation-not").addEventListener("click", closeModalReservationNot)
