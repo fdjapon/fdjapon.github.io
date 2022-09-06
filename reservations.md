@@ -125,23 +125,23 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const durationSlot = '01:00';
   const minReservationDayTime = moment().format('YYYY-MM-DDT08:00');
   const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
-  const modal-reservation = document.getElementById("modal-reservation");  
-  const modal-reservation-not = document.getElementById("modal-reservation-not");  
+  const modalReservation = document.getElementById("modal-reservation");  
+  const modalReservationNot = document.getElementById("modal-reservation-not");  
 
   closeModalReservation = () => { 
-    modal-reservation.style.display = "none"; 
+    modalReservation.style.display = "none"; 
   }
   document.getElementById("close-modal-reservation").addEventListener("click", closeModalReservation)
   window.addEventListener("click", (event) => {
-    event.target == modal-reservation && closeModalReservation()
+    event.target == modalReservation && closeModalReservation()
   })
   
   closeModalReservation = () => { 
-    modal-reservation-not.style.display = "none";
+    modalReservationNot.style.display = "none";
   }
   document.getElementById("close-modal-reservation-not").addEventListener("click", closeModalReservationNot)
   window.addEventListener("click", (event) => {
-    event.target == modal-reservation-not && closeModalReservationNot()
+    event.target == modalReservationNot && closeModalReservationNot()
   })
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -179,10 +179,10 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
       select: function(info) {
 	if (checkSlotValable(info.start) === true){
 	  console.log('Selected');
-          modal-reservation.style.display = "flex";
+          modalReservation.style.display = "flex";
           populateModal(info.start, info.end);
         }
-	modal-reservation-not.style.display ="flex";
+	modalReservationNot.style.display ="flex";
       }
     });
     calendar.render();
