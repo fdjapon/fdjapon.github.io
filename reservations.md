@@ -126,16 +126,22 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const minReservationDayTime = moment().format('YYYY-MM-DDT08:00');
   const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
   
-  closeModal = () => { 
+  closeModalReservation = () => { 
     modal-reservation.style.display = "none"; 
+  }
+  document.getElementById("close-modal-reservation").addEventListener("click", closeModalReservation)
+  window.addEventListener("click", (event) => {
+    event.target == modal-reservation && closeModalReservation()
+  })
+  
+  closeModalReservation = () => { 
     modal-reservation-not.style.display = "none";
   }
-  document.getElementById("close-modal-reservation").addEventListener("click", closeModal)
-  document.getElementById("close-modal-reservation-not").addEventListener("click", closeModal)
+  document.getElementById("close-modal-reservation-not").addEventListener("click", closeModalReservationNot)
   window.addEventListener("click", (event) => {
-    event.target == modal-reservation && closeModal()
-    event.target == modal-reservation-not && closeModal()
+    event.target == modal-reservation-not && closeModalReservationNot()
   })
+
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("reservation-endTime").min = moment().format('YYYY-MM-DDTHH:mm');
     var calendarEl = document.getElementById('calendar');
