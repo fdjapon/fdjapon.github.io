@@ -55,7 +55,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
                   Type de la réservation : 
                 </td>
                 <td>
-                  <select id="reservation-type" name="reservation-type">
+                  <select onchange="checkReservationType()" id="reservation-type" name="reservation-type">
                     <option value="cours">Cours</option>
     	            <option value="traduction">Traduction</option>
     	            <option value="conseil">Conseil</option>
@@ -67,7 +67,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
                   Merci de remplir une adresse email valide, vous recevrez sur cette adresse toutes les informations concernant la réservation .
                 </td>
                 <td>
-                  <input type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
+                  <input onchange="checkReservationEmail()" type="email" id="reservation-email" name="reservation-email" placeholder="votremail@gmail.com" id="email" />
                 </td>
               </tr>
               <tr>
@@ -150,6 +150,13 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
   const modalReservation = document.getElementById("modal-reservation");  
   const modalReservationNot = document.getElementById("modal-reservation-not");  
+
+  checkReservationType(){
+    console.log("Check Reservation Type");
+  }
+  checkReservationEmail(){
+    console.log("Check Reservation Email");
+  }
 
   closeModalReservation = () => { 
     modalReservation.style.display = "none"; 
