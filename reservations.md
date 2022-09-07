@@ -151,13 +151,6 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const modalReservation = document.getElementById("modal-reservation");  
   const modalReservationNot = document.getElementById("modal-reservation-not");  
 
-  checkReservationType(){
-    console.log("Check Reservation Type");
-  }
-  checkReservationEmail(){
-    console.log("Check Reservation Email");
-  }
-
   closeModalReservation = () => { 
     modalReservation.style.display = "none"; 
   }
@@ -279,5 +272,12 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).add(1,'hours').format('YYYY-MM-DDTHH:mm');
     return;
   }
+  checkReservationType(){
+    console.log("Check Reservation Type");
+  }
+  checkReservationEmail(){
+    console.log("Check Reservation Email");
+  }
+
     
 </script>
