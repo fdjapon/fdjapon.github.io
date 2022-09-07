@@ -257,7 +257,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     c = moment();
     diff = r.diff(c, 'hours');
     console.log(diff);
-    if (diff < 1){
+    if (diff < 2){
       return false;
     } else {
       return true;
