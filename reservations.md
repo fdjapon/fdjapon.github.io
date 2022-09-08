@@ -147,7 +147,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
   const maxReservationTime = '21:00';
   const durationSlot = '01:00';
   const minReservationDayTime = moment().format('YYYY-MM-DDT08:00');
-  const maxReservationDayTime = moment().format('YYYY-MM-DDT20:00');
+  const maxReservationDayTime = moment().format('YYYY-MM-DDT21:00');
   const modalReservation = document.getElementById("modal-reservation");  
   const modalReservationNot = document.getElementById("modal-reservation-not");  
 
@@ -269,7 +269,7 @@ When Chuck Norris does a pushup, he isn't lifting himself up, he's pushing the E
     document.getElementById("reservation-startTime").max = moment(maxReservationDayTime).subtract(1,'hours').format('YYYY-MM-DDTHH:mm');
     document.getElementById("reservation-endTime").min = moment(startSelectedSlot).add(1, 'hours').format('YYYY-MM-DDTHH:mm');
     document.getElementById("reservation-endTime").value = moment(endSelectedSlot).format('YYYY-MM-DDTHH:mm');
-    document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).add(1,'hours').format('YYYY-MM-DDTHH:mm');
+    document.getElementById("reservation-endTime").max = moment(maxReservationDayTime).format('YYYY-MM-DDTHH:mm');
     return;
   }
   function checkReservationType(){
